@@ -12,29 +12,28 @@ import java.util.Scanner;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter names: ");
-        String input = sc.nextLine();
+        System.out.print("Enter names (separated by spaces) or press Enter for default: ");
+        String input = scanner.nextLine().trim();
 
-        // If no input
         if (input.isEmpty()) {
             System.out.println("Hello, World!");
         } else {
-            String[] names = input.split(" ");
+            // Split the input into an array of names
+            String[] names = input.split("\\s+");
 
-            System.out.print("Hello, ");
+            // String.join takes a delimiter and an array/list
+            // It puts ", " BETWEEN names, so no trailing comma to remove!
+            String joinedNames = String.join(", ", names);
 
-            // Enhanced for loop
-            for (String name : names) {
-                System.out.print(name + " ");
-            }
-
-            System.out.println("!");
+            System.out.println("Hello, " + joinedNames + "!");
         }
 
-        sc.close();
+        scanner.close();
     }
 }
