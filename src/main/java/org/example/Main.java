@@ -4,23 +4,25 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.util.Scanner;
 
+import java.util.Scanner;
+
+import java.util.Scanner;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter your name: ");
+        System.out.print("Enter names: ");
         String input = sc.nextLine();
 
-        String name;
-
-
         if (input.isEmpty()) {
-            name = "World";
+            System.out.println("Hello, World!");
         } else {
-            name = input;
+            System.out.println("Hello, " + input + "!");
         }
 
-        System.out.println("Hello, " + name + "!");
+        sc.close();
     }
 }
